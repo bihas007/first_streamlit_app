@@ -1,15 +1,17 @@
 print('Hello Bihas')
-import streamlit
+import streamlit as st
 import pandas as pd
 
-streamlit.title('My Parents New Healthy Diner')
-streamlit.header('Breakfast Menu')
+st.title('My Parents New Healthy Diner')
+st.header('Breakfast Menu')
    
-streamlit.text('🥣 Omega 3 & Blueberry oatmeal')
-streamlit.text('🥗 Kale, Spinach & Rocket Smoothie')
-streamlit.text('🐔 Hard-Boiled Free-Range Egg')
-streamlit.text('🥑🍞 Avocado Toast')
-streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
+st.text('🥣 Omega 3 & Blueberry oatmeal')
+st.text('🥗 Kale, Spinach & Rocket Smoothie')
+st.text('🐔 Hard-Boiled Free-Range Egg')
+st.text('🥑🍞 Avocado Toast')
+st.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
 my_fruit_list = pd.read_csv('https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt')
-streamlit.dataframe(my_fruit_list)
+
+st.multiselect("Pick some fruits: ",list(my_fruit_list))
+st.dataframe(my_fruit_list)
