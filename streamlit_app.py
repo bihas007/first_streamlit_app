@@ -15,18 +15,16 @@ st.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 my_fruit_list = pd.read_csv('https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt')
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
-<<<<<<< HEAD
 st.multiselect("Pick some fruits: ",list(my_fruit_list.index))
 st.dataframe(my_fruit_list)
-=======
-# Let's put a pick list here so they can pick the fruit they want to include 
+
 fruits_selected = st.multiselect("Pick some fruits: ",list(my_fruit_list.index),['Avocado','Strawberries'])
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 st.dataframe(fruits_to_show)
 st.header('Fruityvice Fruit advice')
 fruityvice_response = r.get("https://fruityvice.com/api/fruit/watermelon")
 st.text(fruityvice_response.json())
->>>>>>> a6d8ac712030d761ca6381a370e1eafd8d29182f
+
 
 fruityvice_normalized= pd.json_normalize(fruityvice_response.json())
 st.dataframe(fruityvice_normalized)
