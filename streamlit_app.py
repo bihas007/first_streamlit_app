@@ -81,5 +81,6 @@ if st.button('Add a fruit to the list'):
 
 st.write('Thanks for adding ',add_my_fruit)
 
-# not work properly but go with it for now
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+# # not work properly but go with it for now
+
+# my_cur.execute("insert into fruit_load_list values ('from streamlit')")
